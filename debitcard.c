@@ -13,12 +13,13 @@ int main()
 	printf("Enter Card number: ");
 	scanf("%lld",&a);
 	count=size(a);
+	int n=strncmp(b,m,strlen(m));
 	for (int i=0;i<=count;i++)
 	{
 		c[i]=a%10;
 		a=a/10;
 	}
-	if (strcmp(b,m)==0)
+	if (n==0)
 	{
 		if (count==16)
 		{
