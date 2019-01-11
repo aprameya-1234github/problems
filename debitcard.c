@@ -18,9 +18,20 @@ int main()
 		c[i]=a%10;
 		a=a/10;
 	}
-	if (strcmp(b,m)==0&&count==15&&c[0]==5&&(c[1]==1||c[1]==2||c[1]==3||c[1]==4))
+	if (strcmp(b,m)==0)
 	{
-		printf("VALID");
+		if (count==16)
+		{
+			if (c[0]==5&&(c[1]==1||c[1]==2||c[1]==3||c[1]==4)
+			    {
+				    printf("VALID");
+			    }
+			 else
+			    printf("INVALID");
+			    }
+	        else
+			    printf("INVALID");
+			    
 	}
 	else
 	{
