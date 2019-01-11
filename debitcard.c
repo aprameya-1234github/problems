@@ -14,7 +14,7 @@ int main()
 	scanf("%lld",&a);
 	count=size(a);
 	int n=strncmp(b,m,strlen(m));
-	for (int i=0;i<=count;i++)
+	for (int i=(count-1);i>=0;i--)
 	{
 		c[i]=a%10;
 		a=a/10;
@@ -23,7 +23,7 @@ int main()
 	{
 		if (count==16)
 		{
-			if (c[15]==5&&(c[14]==1||c[14]==2||c[14]==3||c[14]==4)
+			if (c[0]==5&&(c[1]==1||c[1]==2||c[1]==3||c[1]==4)
 			    {
 				    printf("VALID");
 			    }
