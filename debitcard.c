@@ -1,38 +1,38 @@
 #include<stdio.h>
 #include<string.h>
-int check(int *a,int b);
+int check(int *num_array,long long int credit_number);
 #define MAX 100
-int size(long long int a);
+int size(long long int credit_number);
 int main()
 {
-	long long int a;
+	long long int credit_number;
 	int count;
-	int c[200];
-	char b[MAX];
-	char m[MAX]="MasterCard";
-	char am[MAX]="American Express";
-	char v[MAX]="Visa";
+	int num_array[200];
+	char card_name[MAX];
+	char master[MAX]="MasterCard";
+	char amex[MAX]="American Express";
+	char visa[MAX]="Visa";
         printf("Enter the type of debit card: ");
-	fgets(b,MAX,stdin);
+	fgets(card_name,MAX,stdin);
 	printf("Enter Card number: ");
-	scanf("%lld",&a);
-	count=size(a);
-	int n=strncmp(b,m,strlen(m));
-	int k=strncmp(b,am,strlen(am));
-	int l=strncmp(b,v,strlen(v));
+	scanf("%lld",&credit_number);
+	count=size(credit_number);
+	int n=strncmp(card_name,master,strlen(m));
+	int k=strncmp(card_name,amex,strlen(am));
+	int l=strncmp(card_name,visa,strlen(v));
 	for (int i=(count-1);i>=0;i--)
 	{
-		c[i]=a%10;
+		num_array[i]=credit_number%10;
 		
-		a=a/10;
+		credit_number=credit_number/10;
 	}
 	if (n==0)
 	{
 		if (count==16)
 		{
-			if (c[0]==5&&(c[1]==1||c[1]==2||c[1]==3||c[1]==4||c[1]==5))
+			if (num_array[0]==5&&(num_array[1]==1||num_array[1]==2||num_array[1]==3||num_array[1]==4||num_array[1]==5))
 			{
-				if (check(c,a)==2)
+				if (check(num_array,credit_number)==2)
 				{
 					printf("VALID");
 				}
@@ -56,9 +56,9 @@ int main()
 	{
 		if (count==15)
 		{
-			if (c[0]==3&&(c[1]==4||c[1]==7))
+			if (num_array[0]==3&&(num_array[1]==4||num_array[1]==7))
 			{
-				if (check(c,a)==2)
+				if (check(num_array,credit_number)==2)
 				{
 					printf("VALID");
 				}
@@ -81,15 +81,15 @@ int main()
 	{
 		if (count==16||count==13)
 		{
-			if (c[0]==4)
+			if (num_array[0]==4)
 			{
-				if (check(c,a)==2)
+				if (check(num_array,credit_number)==2)
 				{
 					printf("VALID");
 				}
 				else
 				{
-					printf("INVALID");
+		               		printf("INVALID");
 				}
 			}
 			else
@@ -118,7 +118,7 @@ int size(long long int a)
 	}
 	return count;
 }
-int check(int *a,int c)
+int check(int *a,long long int c)
 {
 	int sum1=0,sum2=0;
 	int b;
