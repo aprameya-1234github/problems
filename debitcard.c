@@ -124,15 +124,12 @@ int check(int *a,int c)
 	int b;
 	int count;
 	count=size(c);
-	for (int i=0;i<count;i++)
-	{
-		sum1+=a[i];
-	}
 	for (int j=0;j<count;j+=2)
 	{
-		sum1+=a[j+1];
+		sum1+=a[j];
+		sum2+=a[j+1];
 	}
-	if (((2*sum2)-sum1)%10==0)
+	if (((2*sum2)+sum1)%10==0)
 	{
 		b=2;
 	}
