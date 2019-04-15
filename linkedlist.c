@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include<stdio.h>//author: Sayantan Chakrabarty,Department of Computer Science & Technology(2018-2022 batch),IIEST Shibpur
 #include<stdlib.h>
 #include<string.h>
 typedef struct student
